@@ -6,13 +6,13 @@ var titleCase = function(phrase){
 
   var words = phrase.split(" ");
   words.forEach(function(word) {
-    if (connectingWords.indexOf(word) === -1 || timeThroughLoop === 1) {
+    if (connectingWords.indexOf(word.toLowerCase()) === -1 || timeThroughLoop === 1) {
       var firstLetter = word[0].toUpperCase();
-      var remainingLetters = word.slice(1);
+      var remainingLetters = word.slice(1).toLowerCase();
       var newWord = firstLetter + remainingLetters;
       newPhrase = newPhrase + newWord + " ";
     } else {
-      newPhrase = newPhrase + word + " ";
+      newPhrase = newPhrase + word.toLowerCase() + " ";
     }
     timeThroughLoop += 1;
   });

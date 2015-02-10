@@ -1,4 +1,5 @@
 describe('titleCase', function() {
+
   it("capitalizes the first letter of a word", function() {
     expect(titleCase("cat")).to.equal("Cat");
   });
@@ -14,4 +15,9 @@ describe('titleCase', function() {
   it('does capitalize connecting words if is first word', function() {
     expect(titleCase("the crazy cat is on your head")).to.equal("The Crazy Cat is On Your Head");
   });
+
+  it('only capitalizes the first letter even if its entered in caps', function() {
+    expect(titleCase("THAT CAT IS CRAZY")).to.equal("That Cat is Crazy");
+  });
+
 });
